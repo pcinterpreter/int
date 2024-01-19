@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>PSUEDO CODE INTERPRETER 2.0</h1>
+    <h3>By Abdullah Khan</h3>
+    <hr>
+    <h4 class="input">Input</h4>
+    <div class="line-numbers"></div>
+    <textarea name="inputarea" id="inputarea" class="inputarea" cols="80" rows="20"></textarea>
+    <h4 class="outLabel">Output</h4>
+    <textarea name="outputArea" id="outputarea" cols="80" rows="20" class="outarea"></textarea><br>
+    <button id="runbutton" class="executeB">Execute</button>
+
+    <script src="interpreter.js"></script>
+    <script src="linenumbers.js"></script>
+    <script>
+        function updateLineNumbers() {
+        const textarea = document.getElementById('inputarea');
+        const lineNumbers = document.querySelector('.line-numbers');
+        const lines = textarea.value.split('\n');
+        lineNumbers.innerHTML = '';
+
+        for (let i = 1; i <= lines.length; i++) {
+            lineNumbers.innerHTML += i + '<br>';
+        }
+
+        
+        const lineHeight = 15; 
+        textarea.style.height = lines.length * lineHeight + 'px';
+    }
+
+    const textarea = document.getElementById('inputarea');
+    textarea.addEventListener('input', updateLineNumbers);
+
+    updateLineNumbers();
+    </script>
+</body>
+</html>
