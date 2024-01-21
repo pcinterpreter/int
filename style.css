@@ -3,6 +3,7 @@
     right: 47%;
     top: 18%;
 }
+
 .outarea{
     position: absolute;
     right: 10%;
@@ -35,7 +36,13 @@
     top: 21%;
     right: 85%;
 }
+
 .input{
     position: absolute;
     left: 7%;
+}
+
+.keyword {
+    color: blue;
+    font-weight: bold;
 }
